@@ -14,29 +14,29 @@ var expect = chai.expect;
                                 //********* ASSERT  ***********/
 
 
-//  "aspect" refers to a specific feature or attribute of the code being tested
-
-//  "Aspect" typically refers to a feature or attribute of the code being tested.
+//  "Aspect" refers to a specific feature or attribute of the code being tested.
 //   In a test suite, you might write multiple tests to cover different aspects of the code's behavior. 
-//   For example, if you're testing a function that performs mathematical operations, 
-//                        you might write tests to cover different aspects such as addition, subtraction, multiplication, and division.
+/*
+   For example, if you're testing a function that performs mathematical operations, you might write tests 
+   to cover different aspects such as addition, subtraction, multiplication, and division.
 
-
+*/
 
  describe('------------Aspect check------------' , function (){
 
     let userName = 'Prabin Poudel';   // now will check is this userName a boolean /string / number 
     let mylist = {
-        item :[{
-            id : 1 , name : "demo",
-        }],
+        item :[
+            {id : 1 , name : "demo"},
+            {id : 1 , name : "demo"},
+        ],
     }
 
     it("check string", function(){
         assert.typeOf(userName, 'string');
     })
 
-    //for example, we want to check that the value is qual or not 
+    //for example, we want to check that the value is equal or not 
     it("equal match to the string ", function (){
         assert.equal(userName, 'Prabin Poudel');
     })
@@ -48,7 +48,7 @@ var expect = chai.expect;
 
     //wanna match the length of mylist
     it('should match the length of mylist', function(){
-        assert.lengthOf(mylist.item, 1);
+        assert.lengthOf(mylist.item, 2);
     })
 })
 
@@ -56,10 +56,9 @@ var expect = chai.expect;
 
                                          //********* SHOULD  ***********/
 
-
-//  "expect" refers to the expected outcome of a test related to that aspect.
-//  "Expect" refers to the expected outcome of a test. 
+//  "Expect" refers to the expected outcome of a test related to that aspect.. 
 //  In a test, you specify what you expect the code under test to do and then use assertions to verify if the expected outcome has been met. 
+
 //  In the example, The code uses the assert.equal method from the assert module to check 
 //   if the result of calling indexOf with the value 4 on the array [1, 2, 3] is equal to -1.
 //    If the result is not equal to -1, the test will fail., 
