@@ -27,8 +27,8 @@ var expect = chai.expect;
     let userName = 'Prabin Poudel';   // now will check is this userName a boolean /string / number 
     let mylist = {
         item :[
-            {id : 1 , name : "demo"},
-            {id : 1 , name : "demo"},
+            {id : 1 , name : "prabin"},
+            {id : 2 , name : "poudel"},
         ],
     }
 
@@ -56,22 +56,14 @@ var expect = chai.expect;
 
                                          //********* SHOULD  ***********/
 
-//  "Expect" refers to the expected outcome of a test related to that aspect.. 
-//  In a test, you specify what you expect the code under test to do and then use assertions to verify if the expected outcome has been met. 
-
-//  In the example, The code uses the assert.equal method from the assert module to check 
-//   if the result of calling indexOf with the value 4 on the array [1, 2, 3] is equal to -1.
-//    If the result is not equal to -1, the test will fail., 
-//    the expectation was that the result of calling indexOf with the value 4 on the array [1, 2, 3] would be equal to -1.
-// The purpose of the test is to verify that the indexOf method behaves as expected and returns -1 when the value is not present in the array.
-
 
 describe('should check', function(){
     let userName = "PRabinPoudel";
     let mylist = {
-        item :[{
-            id :1 , name: 'Prabin'
-        }],
+        item :[
+            {id :1 , name: 'Prabin'},
+            {id :2 , name: 'Poudel'},
+        ],
         title : 'user list'
     }
         it('check string', function(){
@@ -83,20 +75,32 @@ describe('should check', function(){
         //                                               //but we are checking equal as PrabinPoudel
         // })
 
+        it('equal check', function(){
+            userName.should.equal('PRabinPoudel');
+        })
+
         it('length check' , function(){
-            mylist.should.have.property('item').with.lengthOf(1);
+            mylist.should.have.property('item').with.lengthOf(2);
         })
 });
 
-
-
                                          //********* EXPECT  ***********/
+
+//  "Expect" refers to the expected outcome of a test related to that aspect.. 
+//  In a test, you specify what you expect the code under test to do and then use assertions to verify if the expected outcome has been met. 
+
+//  In the example, The code uses the assert.equal method from the assert module to check 
+//   if the result of calling indexOf with the value 4 on the array [1, 2, 3] is equal to -1.
+//    If the result is not equal to -1, the test will fail., 
+//    the expectation was that the result of calling indexOf with the value 4 on the array [1, 2, 3] would be equal to -1.
+// The purpose of the test is to verify that the indexOf method behaves as expected and returns -1 when the value is not present in the array.
+
 describe("check expect" , function(){
     let userName = "PRabinPoudel";
     let mylist = {
-        item :[{
-            id :1 , name: 'Prabin'
-        }],
+        item :[
+            {id :1 , name: 'Prabin'}
+        ],
         title : 'user list'
     }
     it('string match', function(){
