@@ -1,0 +1,26 @@
+/*                                              What is SINON JS?
+=> SinonJS is a JavaScript library that provides standalone test spies, stubs, and mocks. 
+* It’s very flexible and easy to use since you can combine it with any testing framework. here, we’re using Mocha.
+* Sinon provides spies, stubs, and mocks. They're all useful as fakes in tests. They come with essential differences for what they're helpful in doing and how they work.
+
+						Why Use Test Double / Fakes?
+
+* In a unit test, you might want to avoid having to test the unit's dependencies. This is especially true in white-box testing. In this case, test fakes are going to be very helpful. Sinon provides several fakes, notably spies, stubs, and mocks.
+* In unit testing, fakes or test doubles are classes or components that replace external dependencies. Fakes simulate successful or failed scenarios to test the logic around the real dependencies they replace.
+For more visit: https://tanzu.vmware.com/developer/guides/test-doubles/
+
+
+
+1.   what is Spy in testcases  ?
+=> A test spy is a function that records arguments, return value, the value of "this" and exception thrown (if any) for all its calls. 
+
+
+
+                                *****when to use spices, stubs, mocks******
+    Use Spies - if you simply want to watch and verify somethings happens in your test case.
+
+    Use Stubs - if you simply want to specify how something will work to help your test case.
+
+    Use Mocks - if you want to both of the above on a single dependency in your test case.
+
+*/

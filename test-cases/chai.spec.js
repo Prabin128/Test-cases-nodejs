@@ -124,31 +124,42 @@ describe("check expect" , function(){
             //expect(mylist).to.have.all.keys('item', 'title', 'hello');
 
     })
+});
 
     //more complex version 
-    myNewList  = {
-        item : [{
-            id : 1, name: 'Prabin'
-        }],
-        title : "title for chai expect check",
-        address :{
-            country : 'Nepal',
-            phoneNumber : ['9898989898','89898989898']
+    describe("checking complex object", function(){
+        myNewList  = {
+            item : [{
+                id : 1, name: 'Prabin'
+            }],
+            title : "title for chai expect check",
+            address: {
+                country : 'Nepal',
+                phoneNumber : ['9898989898','89898989898']
+            }
         }
-    }
-
-    it('phone Number checking' ,  function (){
-        expect(myNewList).to.have.nested.property('address.phoneNumber[1]');   // phoneNumber[1] if it exceeds from 1 then,
-                                                                               // it throws error coz we have only till index 1
-    })
-
-    //value checking,  check wether the country has NEpal or not 
-    it('Country name checking' ,  function (){
-        expect(myNewList).to.have.nested.include({'address.country' : "Nepal"}); 
-    })
-
-    //matching phone Number
-    it('Phone Number match ' ,  function (){
-        expect(myNewList).to.have.nested.include({'address.phoneNumber[1]' : "89898989898"}); 
-    })
-})
+    
+        it('object match' ,  function (){
+            expect(myNewList).to.have.all.keys('item','title','address');   
+        });
+    
+        it('phone Number checking' ,  function (){
+            expect(myNewList).to.have.nested.property('address.phoneNumber[0]');   // phoneNumber[1] => if it exceeds from 1 then,  
+                                                    // it throws error coz we have only phoneNumbers till index 1    => if given phoneNumber[0] it will be fine too
+        });
+    
+        //value checking,  check wether the country has Nepal or not 
+        it('Country name checking' ,  function (){
+            expect(myNewList).to.have.nested.include({'address.country' : "Nepal"}); 
+        })
+    
+        //matching phone Number
+        it('Phone Number match ' ,  function (){
+            expect(myNewList).to.have.nested.include({'address.phoneNumber[1]' : "89898989898"}); 
+        })
+        it('check title to be a string' ,  function (){
+            expect(myNewList).to.have.nested.property('title').to.be.a('string'); 
+        })
+    
+    });
+ 

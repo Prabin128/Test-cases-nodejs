@@ -3,7 +3,7 @@ class Student {
 
     }
     home(type){   //lets suppose we are calling homepage function and defining what its type
-        let data = this.getInfo(type,1) //passing 1 
+        let data = this.getInfo(type,1) //passing 1  ==> hardcoded
         return data + 5;
     }
     userId(){
