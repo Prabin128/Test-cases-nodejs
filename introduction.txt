@@ -3,9 +3,19 @@
 * It’s very flexible and easy to use since you can combine it with any testing framework. here, we’re using Mocha.
 * Sinon provides spies, stubs, and mocks. They're all useful as fakes in tests. They come with essential differences for what they're helpful in doing and how they work.
 
+
+
+                                *****when to use spices, stubs, mocks******
+    Use Spies - if you simply want to watch and verify somethings happens in your test case.
+
+    Use Stubs - if you simply want to specify how something will work to help your test case.
+
+    Use Mocks - if you want to both of the above on a single dependency in your test case.
+
+
 						Why Use Test Double / Fakes?
 
-* In a unit test, you might want to avoid having to test the unit's dependencies. This is especially true in white-box testing. In this case, test fakes are going to be very helpful. Sinon provides several fakes, notably spies, stubs, and mocks.
+* In a unit test, you might want to avoid having to test the unit's dependencies. This is especially true in white-box testing. In this case, test fakes are going to be very helpful. 
 * In unit testing, fakes or test doubles are classes or components that replace external dependencies. Fakes simulate successful or failed scenarios to test the logic around the real dependencies they replace.
 For more visit: https://tanzu.vmware.com/developer/guides/test-doubles/
 
@@ -15,12 +25,13 @@ For more visit: https://tanzu.vmware.com/developer/guides/test-doubles/
 => A test spy is a function that records arguments, return value, the value of "this" and exception thrown (if any) for all its calls. 
 
 
+2. what is stub ?
+=> 
 
-                                *****when to use spices, stubs, mocks******
-    Use Spies - if you simply want to watch and verify somethings happens in your test case.
-
-    Use Stubs - if you simply want to specify how something will work to help your test case.
-
-    Use Mocks - if you want to both of the above on a single dependency in your test case.
+ 1. With the stub() function, you can swap out a function for a fake version of that function with pre-determined behavior. 
+    This is helpful for testing edge cases, like what happens when an HTTP request fails.
+ 2. There’re times when we wanted to test a function that has dependencies (Eg: another secondary function inside the function)
+    You would stub those dependencies(secondary function) out to force your code into some specific path.
+    
 
 */

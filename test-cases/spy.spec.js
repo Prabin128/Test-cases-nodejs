@@ -5,25 +5,6 @@
 */
 
 
-/*                                              What is SINON JS?
-=> SinonJS is a JavaScript library that provides standalone test spies, stubs, and mocks. 
-It’s very flexible and easy to use since you can combine it with any testing framework. here, we’re using Mocha.
-
-1.   what is Spy in testcases  ?
-=> A test spy is a function that records arguments, return value, the value of "this" and exception thrown (if any) for all its calls. 
-
-
-
-                                *****when to use spices, stubs, mocks******
-    Use Spies - if you simply want to watch and verify somethings happens in your test case.
-
-    Use Stubs - if you simply want to specify how something will work to help your test case.
-
-    Use Mocks - if you want to both of the above on a single dependency in your test case.
-
-*/
-
-
 
 //Sinon
 var sinon = require('sinon');
