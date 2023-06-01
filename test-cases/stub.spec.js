@@ -32,7 +32,8 @@ describe('---------Test suit for Stubs------------', function(){
         stub.withArgs(10,20).returns(100); //stubbed add method here     // when passed 10 & 20  it returns 100 instead of 30
         expect(studentObj.callingAnotherFn(10,20)).to.be.equal(100);
     */
-       // 
+   
+       // adding more functionality on above code 
        stub.
             withArgs(10,20)
             .onFirstCall().returns(100)

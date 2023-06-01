@@ -13,8 +13,9 @@
     Use Mocks - if you want to both of the above on a single dependency in your test case.
 
 
-						Why Use Test Double / Fakes?
+						Why Use Test Double ?
 
+* Any number of substitute items that make testing simpler are referred to as test doubles. 
 * In a unit test, you might want to avoid having to test the unit's dependencies. This is especially true in white-box testing. In this case, test fakes are going to be very helpful. 
 * In unit testing, fakes or test doubles are classes or components that replace external dependencies. Fakes simulate successful or failed scenarios to test the logic around the real dependencies they replace.
 For more visit: https://tanzu.vmware.com/developer/guides/test-doubles/
@@ -27,11 +28,53 @@ For more visit: https://tanzu.vmware.com/developer/guides/test-doubles/
 
 2. what is stub ?
 => 
-
  1. With the stub() function, you can swap out a function for a fake version of that function with pre-determined behavior. 
     This is helpful for testing edge cases, like what happens when an HTTP request fails.
  2. There’re times when we wanted to test a function that has dependencies (Eg: another secondary function inside the function)
     You would stub those dependencies(secondary function) out to force your code into some specific path.
-    
+  
+
+							What is mocking?
+
+Mocking is a process used in unit testing when the unit being tested has external dependencies. The purpose of mocking is to isolate and focus on the code being tested and not on the behavior or state of external dependencies. In mocking, the dependencies are replaced by closely controlled replacements objects that simulate the behavior of the real ones. There are three main possible types of replacement objects - fakes, stubs and mocks.
+
+Fakes: A Fake is an object that will replace the actual code by implementing the same interface but without interacting with other objects. Usually the Fake is hard-coded to return fixed results. To test for different use cases, a lot of Fakes must be introduced. The problem introduced by using Fakes is that when an interface has been modified, all fakes implementing this interface should be modified as well.
+
+Stubs: A Stub is an object that will return a specific result based on a specific set of inputs and usually won’t respond to anything outside of what is programed for the test. With JustMock you can create a Stub in a test with a minimal amount of code, making it clear how the dependency will respond and how the tested system should behave.
+
+Mocks: A Mock is a much more sophisticated version of a Stub. It will still return values like a Stub, but it can also be programmed with expectations in terms of how many times each method should be called, in which order and with what data. With JustMock you can create a Mock with just one line of code, which makes the test more understandable.  
+
+
+*Test First - Test-Driven Development (TDD)
+
+The test first methodology implies writing the unit test before writing the actual code. This process forces the developer to think about the unit’s interface and expected results. Whether or not the code is written correctly is apparent immediately when using this methodology.
+
+Test-driven development is based on the test first methodology but with the introduction of refactoring. TDD has the following prescribed set of steps:
+
+    Write an automated unit test which will initially fail for the new functionality being implemented. Use mock objects to stand in for dependencies.
+    Write the minimum code needed to make the test pass. The code does not have to be perfect, it will be refined later.
+    Refactor (or clean up) the code or add additional user cases to the test
+    Ensure the tests still pass.
+    Repeat
+
+The purpose of refactoring and rerunning the tests is to help the developer deliver better code quality. If the refactoring step is skipped, there may be some repeated code, thus the DRY (Don’t Repeat Yourself) principle will be violated. If the tests are not continually re-run, a broken test can occur as a result of new code or previous refactoring.
+
+Since TDD requires that each code unit is preceded by a test describing its functionality, using this methodology means following the YAGNI (You Aren’t Going to Need It) principle or ensuring that each functionality added is really needed.
+
+
+* Behavior-Driven Development (BDD)
+
+Behavior driven development is based on TDD but it also addresses some of the issues that using TDD poses—where to start, what to test, how much to test in a cycle and what to call in the tests. BDD focuses on the behavioral requirements of the tested units.
+
+BDD uses a ubiquitous language to facilitate communication between developers and stakeholders.
+
+The following are the ways BDD modifies the unit testing process:
+
+    Using automated testing for feedback and regression testing.
+    Using ‘when’ to describe an action under test.
+    Using ‘should’ to describe behavior expected from the code.
+    Using ‘ensure’ to describe responsibilities outside the scope of the code tested.
+    Using mock objects to stand in for dependencies.
+
 
 */

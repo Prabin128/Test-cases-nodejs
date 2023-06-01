@@ -5,7 +5,6 @@
 */
 
 
-
 //Sinon
 var sinon = require('sinon');
 var chai = require('chai');
@@ -58,6 +57,6 @@ describe('---------Spy------------', function(){
                                                  //Can be used for partial matching, Sinon only checks the provided arguments 
                                                  //against actual arguments, so a call that received the provided 
                                                  //arguments (in the same spots) and possibly others as well will return true. 
-    })
+    });
     
-})
+});

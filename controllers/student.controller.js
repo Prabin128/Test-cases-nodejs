@@ -17,7 +17,7 @@ class Student {
     }
 
 
-    //for stub  
+    //for stub    & also for mock 
 
     // example 1
     finalMarksOfStudent(total){    //passed 50 while testing 
