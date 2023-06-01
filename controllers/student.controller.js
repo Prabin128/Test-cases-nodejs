@@ -17,7 +17,9 @@ class Student {
     }
 
 
-    //for stub 
+    //for stub  
+
+    // example 1
     finalMarksOfStudent(total){    //passed 50 while testing 
 
         //here finalSum depends on externalMarks and internalMarks .
@@ -32,9 +34,26 @@ class Student {
         return total + 20 ;  //external teacher increasing 20 marks and sending to finalMarksOfStudent 
     }
 
-    getMarksFromInternal(total){    //30
+    getMarksFromInternal(total){    //got 50 marks while testing => this function return 30 after returing (total -20)
 
         return total - 20 ;  //internal teacher decresing 20 marks and sending to finalMarksOfStudent 
+    }
+
+    //example 2
+    sayHello(str) {
+        console.log(str);
+    }
+
+    add(arg1, arg2) {
+        var result;
+        result = arg1 + arg2;
+        return result;
+    }
+
+    callingAnotherFn(arg1, arg2) {
+        this.sayHello("hello!! from the sayHello method while testing stub ");
+        var result = this.add(arg1, arg2); //calling add method
+        return result;
     }
 
 }
