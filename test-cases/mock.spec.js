@@ -1,3 +1,5 @@
+/* to run this file as single  => npm run test-single-file -- test-cases/mock.spec.js */
+
 //In mocking, we avoid the actual call to a function, and instead of actual call we just use a dummy call . We create the mock of it.
 
 var sinon = require('sinon');
@@ -7,15 +9,6 @@ var Student = require('../controllers/student.controller');
 var studentObj = new Student();
 
 describe('---------Test suit for Mock------------', function(){
-    // //example 1
-    // it('stub the getMarksFromExternal method', function() {
-    //     var stubObj = sinon.stub(studentObj, 'getMarksFromExternal'); //here we stubed getMarksFromExternal() function 
-    //     stubObj.withArgs(50).returns(10);   // we calling getMArksFromExternal(). If got 50 marks (in "total" argument) we are hoping, external teacher will return 10 marks 
-    //     expect(studentObj.finalMarksOfStudent(50)).to.be.equal(50);     //if passed 50 marks in finalMarksOfStudent(50) , from return of this function ==> 
-    //                                              //we hoped external will give 10 marks (from stubbed) + 
-    //                                      // from getMarksFromInternal(total) we get 30  + 10 
-    // });
-
 
     //example 2
     it("mock the sayHello method", function(){
@@ -26,9 +19,22 @@ describe('---------Test suit for Mock------------', function(){
         //creating a mock
         var mock = sinon.mock(studentObj); //this statement will not change our actual object but will only create a wrapper around it. 
         var expection = mock.expects("sayHello");//expection from mock is that, out of the "studentObj" object, mock should expect that sayHello method should be mocked 
-        expection.exactly(1);
+        expection.exactly(1); // expectations should happen only once.
+        expection.withArgs("hello!! from the sayHello method"); //it has been called with args => "hello!! from the sayHello method"
         studentObj.callingAnotherFn(10,20); 
-        mock.verify();
-       
+        mock.verify(); //at the end we need to verify all the expections
+        
+        // In the output,it has not printed the console part of the sayHello method. It has ignored it.
     });
+
+    //example 1
+    it('count function call', function() {
+        //mock also can be used for how many times  the function is called and with what argument.
+        var mock = sinon.mock(studentObj);
+        var expect = mock.expects('getMarksFromExternal');    
+        expect.exactly(1);
+        expect.withArgs(40)   //argument is "total" here ..so, same argument shoukd be passed in finalMarksOfStudent() & getMarksFromExternal()
+        studentObj.finalMarksOfStudent(40);
+        mock.verify();
+    });       
 });

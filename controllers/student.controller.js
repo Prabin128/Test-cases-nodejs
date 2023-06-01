@@ -43,6 +43,7 @@ class Student {
     sayHello(str) {
         console.log(str);
     }
+    
 
     add(arg1, arg2) {
         var result;
@@ -51,7 +52,7 @@ class Student {
     }
 
     callingAnotherFn(arg1, arg2) {
-        this.sayHello("hello!! from the sayHello method while testing stub ");
+        this.sayHello("hello!! from the sayHello method");
         var result = this.add(arg1, arg2); //calling add method
         return result;
     }
