@@ -1,13 +1,15 @@
-class Student {
+class Student 
+{
+    constructor(){}  //Empty Initialization of constructor  
 
-    //for spy 
-    constructor(){
 
-    }
+               //************************************** Functions Forfor spy *********************************************************// 
+
     home(type){   //lets suppose we are calling homepage function and defining what its type
         let data = this.getInfo(type,1) //passing 1  ==> hardcoded
         return data + 5;
     }
+
     userId(){
         return 12;
     }
@@ -17,7 +19,7 @@ class Student {
     }
 
 
-    //for stub    & also for mock 
+    //******************************************** Functions For stub  & also for mock ************************************************//
 
     // example 1
     finalMarksOfStudent(total){    //passed 50 while testing 
@@ -39,12 +41,11 @@ class Student {
         return total - 20 ;  //internal teacher decresing 20 marks and sending to finalMarksOfStudent 
     }
 
-    //example 2
+    // example 2
     sayHello(str) {
         console.log(str);
     }
     
-
     add(arg1, arg2) {
         var result;
         result = arg1 + arg2;
@@ -57,6 +58,15 @@ class Student {
         return result;
     }
 
+    //******************************************Functions For Promises Testing ************************************************** */
+
+    testPromise() {
+        return new Promise (function(resolve, reject) {
+            setTimeout(() => resolve(4), 5000);  //returns 1 as a result , after 3000 => 3 second
+        }).then(function(result) {
+            return result * 2;
+        })
+    }
 }
 
 module.exports = Student
