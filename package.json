@@ -18,5 +18,8 @@
     "nodemon": "^2.0.20",
     "sequelize": "^6.28.0",
     "sinon": "^15.0.1"
+  },
+  "devDependencies": {
+    "chai-as-promised": "^7.1.1"
   }
 }
