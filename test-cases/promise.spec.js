@@ -16,12 +16,17 @@ describe("--------------Test suit for Promise-----------------", function() {
 
     //1. Method 1 (Normal way without using any library)
     it("Promise test case with normal method", function(done) {  // done is callback method, which keeps track of the completion of asynchronous call.
-                        //If done, callback is called even at a later point of time. At that point of time it will decide, whether a test case is succesfull or not 
+                        //If done, callback is called even at a later point of time. At that point of time it will decide, whether a test case is succesfull or not  
+                        //(done keep track of time i.e how mucn it took time to run the test)
+
       //this.timeout(6000); // Normally gives timeout after 2 seconds. It automatically fails the test cases after 2 sec. So, setting timeout to 6000ms and wait until that point ..if still not resolved/rejected it fails the test.
       this.timeout(0); //better is to set as 0 ,this means it waits as long as promise is not resolved or rejected.
+      
       studentObj.testPromise().then(function(result){
         expect(result).to.be.equal(8);
+
         //expect(false).to.be.false;  //its still passing the test cases.Because it is not tracking the completion of the promise.So using done(). (Not necessary to use this statement in code ..Just for knowledge) 
+        
         done();  
       });  
     });
