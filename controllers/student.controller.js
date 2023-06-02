@@ -1,3 +1,5 @@
+const { default: axios } = require("axios");
+
 class Student 
 {
     constructor(){}  //Empty Initialization of constructor  
@@ -58,6 +60,7 @@ class Student
         return result;
     }
 
+
     //******************************************Functions For Promises Testing ************************************************** */
 
     testPromise() {
@@ -67,6 +70,18 @@ class Student
             return result * 2;
         })
     }
+
+    //****************************************** Functions For Nock  ******************************************************* */
+    thirdPartyApi(){
+        return new Promise((resolve, reject) => {
+            axios.get("http://localhost/api/dummyApi").then(response => {
+                resolve(response.data)
+            }).catch(error => {
+                reject(error)
+            })
+        })
+    }
+
 }
 
 module.exports = Student

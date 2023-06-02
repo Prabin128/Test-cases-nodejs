@@ -36,7 +36,13 @@ For more visit: https://tanzu.vmware.com/developer/guides/test-doubles/
 
 							What is mocking?
 
-Mocking is a process used in unit testing when the unit being tested has external dependencies. The purpose of mocking is to isolate and focus on the code being tested and not on the behavior or state of external dependencies. In mocking, the dependencies are replaced by closely controlled replacements objects that simulate the behavior of the real ones. There are three main possible types of replacement objects - fakes, stubs and mocks.
+Mocking is a process used in unit testing when the unit being tested has external dependencies. The purpose of mocking is to isolate and focus on the code being tested and not on the behavior or state of external dependencies. A mock is a method or object that mimics the behavior of an external system in a controlled way. Mocks are created in a manner that stimulates the behavior of an external system — they are called and respond in the same manner as the external system. Examples of popular mocking libraries include:
+
+    EasyMock
+    JMockit
+    Mockito
+    Nock
+
 
 Fakes: A Fake is an object that will replace the actual code by implementing the same interface but without interacting with other objects. Usually the Fake is hard-coded to return fixed results. To test for different use cases, a lot of Fakes must be introduced. The problem introduced by using Fakes is that when an interface has been modified, all fakes implementing this interface should be modified as well.
 
@@ -76,5 +82,17 @@ The following are the ways BDD modifies the unit testing process:
     Using ‘ensure’ to describe responsibilities outside the scope of the code tested.
     Using mock objects to stand in for dependencies.
 
+
+
+
+                                                                  What is Nock?
+
+==> Nock is an HTTP server mocking and expectations library for Node.js. Nock works by overriding the http.request and http.ClientRequest functions, intercepting all requests made to a specified URL and returning specified responses that mimic the data that the real URL would return.
+
+Using Nock as a mock server, we can easily perform tests on modules that make HTTP requests to an external object like a URL without actually making any requests to the URL. This makes our testing process faster and more efficient.
+
+
+								What is Axios? 
+Axios is a promise-based HTTP library that lets developers make requests to either their own or a third-party server to fetch data. It offers different ways of making requests such as GET, POST, PUT/PATCH, and DELETE. In this tutorial, I will explain how Axios interacts with applications, describe the structure of Axios requests and responses, how to make requests to an API, and how to write tests for your requests using CircleCI.
 
 */
