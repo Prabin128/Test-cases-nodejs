@@ -19,16 +19,16 @@ describe("--------------Test suit for Nock----------------", function() {
     it("api test", function(done) {
         var obj = {status:"ok", statusCode:200, data: ["hellooo"]}
 
-        const apihit = nock('http://localhost/api')
-        .get('/dummyApi')
+        const apihit = nock('http://localhost/api')  //path of the API
+        .get('/dummyApi')  //assuming this as base url 
         .reply(200, obj);
 
-        studentObj.thirdPartyApi().then(function(record){
-            console.log("Consoled data :-",record)
-            expect(record).to.be.eql(obj);
-            done();
+        studentObj.thirdPartyApi().then(function(record){  //anything getting from the record (from the function)
+            console.log("Consoled data :-",record);
+            expect(record).to.be.eql(obj);  //should be equal to (match with) the obj that we haved defined above. 
+            done(); //saying function that your work is done 
         }).catch(error => {
-            done(new Error('error:' + error))
+            done(new Error('error:' + error));
         })
     })
 })

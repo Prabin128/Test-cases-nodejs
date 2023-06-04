@@ -74,7 +74,8 @@ class Student
     //****************************************** Functions For Nock  ******************************************************* */
     thirdPartyApi(){
         return new Promise((resolve, reject) => {
-            axios.get("http://localhost/api/dummyApi").then(response => {
+            axios.get("http://localhost/api/dummyApi")  //dummy URL
+            .then(response => { 
                 resolve(response.data)
             }).catch(error => {
                 reject(error)
