@@ -6,10 +6,11 @@ const userList = (req,res) => {
     res.status(200).json({
         statusText : "success",
         data  
-        
+
 
     });
 }
+
 
 module.exports = {
     userList
