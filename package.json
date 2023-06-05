@@ -4,7 +4,14 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha 'test-cases/**/*.spec.js' ",
-    "test-single-file": "mocha"
+    "test-single-file": "mocha",
+
+    
+    "//": " (test-report) : (mocha 'test-cases/**/*.spec.js' --reporter mochawesome --require mochawesome/register) => " ,
+    "//": " This configuration gives the file as : 'mochawesome-report' by default But if we want as Test-Report we do as below ",
+   
+    
+    "test-report" : "mocha 'test-cases/**/*.spec.js' --reporter mochawesome ---reporter-options reportDir=TestCases_Report, reportfilename=TestCases_Report"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +23,7 @@
     "chai-http": "^4.3.0",
     "express": "^4.18.2",
     "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3",
     "mysql2": "^3.1.1",
     "nodemon": "^2.0.20",
     "sequelize": "^6.28.0",

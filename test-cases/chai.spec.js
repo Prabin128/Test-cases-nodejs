@@ -50,6 +50,42 @@ var expect = chai.expect;
     it('should match the length of mylist', function(){
         assert.lengthOf(mylist.item, 2);
     })
+
+    //Same above But, just to show in test report that coz of .skip , its still pending to test.
+    it.skip('should match the length of mylist', function(){
+        assert.lengthOf(mylist.item, 2);
+    })
+})
+
+//same copy of the above describe.. Just skipping this descibe for the test case report to show this describe was skipped(pending)
+describe.skip ('------------Example to show in test report that coz of .skip its still pending to test ------------' , function (){
+
+    let userName = 'Prabin Poudel';   // now will check is this userName a boolean /string / number 
+    let mylist = {
+        item :[
+            {id : 1 , name : "prabin"},
+            {id : 2 , name : "poudel"},
+        ],
+    }
+
+    it("check string", function(){
+        assert.typeOf(userName, 'string');
+    })
+
+    //for example, we want to check that the value is equal or not 
+    it("equal match to the string ", function (){
+        assert.equal(userName, 'Prabin Poudel');
+    })
+
+    // if we want to match the length of the userName 
+    it('should match the length of the string', function (){
+        assert.lengthOf(userName, 13);
+    })
+
+    //wanna match the length of mylist
+    it('should match the length of mylist', function(){
+        assert.lengthOf(mylist.item, 2);
+    })
 })
 
 
