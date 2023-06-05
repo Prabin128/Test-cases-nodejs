@@ -9,9 +9,11 @@ const app = express();
 const userRoute = require('./routes/user');
 
 
-app.use("/user", (req, res) => {
-    res.send("hello");
-});
+// app.use("/user", (req, res) => {
+//     res.send("hello");
+// });
+
+app.use('/user', userRoute);
 
 
 module.exports = app;

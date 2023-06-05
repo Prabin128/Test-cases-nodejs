@@ -1,6 +1,14 @@
 
 const userList = (req,res) => {
-    res.send('HEllo');
+    let data = {
+        list: "Hello"
+    }
+    res.status(200).json({
+        statusText : "success",
+        data  
+        
+
+    });
 }
 
 module.exports = {

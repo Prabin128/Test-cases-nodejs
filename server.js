@@ -4,6 +4,6 @@ const port = 3000;
 
 const server = http.createServer(app);
 
-server.listen(port, () => {
+module.exports = server.listen(port, () => {   ///exporting for api.spec.js (for chai.request)
     console.log(`App is listening at http://localhost:${port}`);
 })
