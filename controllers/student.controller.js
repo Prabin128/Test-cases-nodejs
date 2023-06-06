@@ -34,7 +34,7 @@ class Student
         return finalSum; 
     }
     getMarksFromExternal(total){
-
+        
         return total + 20 ;  //external teacher increasing 20 marks and sending to finalMarksOfStudent 
     }
 

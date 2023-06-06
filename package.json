@@ -5,13 +5,9 @@
   "scripts": {
     "test": "mocha 'test-cases/**/*.spec.js' ",
     "test-single-file": "mocha",
-
-    
-    "//": " (test-report) : (mocha 'test-cases/**/*.spec.js' --reporter mochawesome --require mochawesome/register) => " ,
-    "//": " This configuration gives the file as : 'mochawesome-report' by default But if we want as Test-Report we do as below ",
-   
-    
-    "test-report" : "mocha 'test-cases/**/*.spec.js' --reporter mochawesome ---reporter-options reportDir=TestCases_Report, reportfilename=TestCases_Report"
+    "//": " This configuration gives the file as : 'mochawesome-report' by default. But if we want as Test-Report we do as below ",
+    "test-report": "mocha 'test-cases/**/*.spec.js' --reporter mochawesome ---reporter-options reportDir=TestCases_Report, reportfilename=TestCases_Report",
+    "coverage": "nyc --reporter=lcov --reporter=text npm run test"
   },
   "author": "",
   "license": "ISC",

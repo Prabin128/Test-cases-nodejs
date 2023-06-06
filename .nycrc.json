@@ -1,0 +1,5 @@
+{
+    "//" : "excluding the test-cases folder",
+    "exclude" : "test-cases",
+    "include" : "controllers"
+}
